@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 23 23 23;
+  --background: 255 255 255;
+  --primary: 37 99 235;
+  --secondary: 22 163 74;
+  --accent: 234 88 12;
+  --muted: 241 245 249;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold font-sans;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .section {
+    @apply py-16 sm:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-primary rounded-lg shadow-sm hover:bg-primary/90 transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-secondary rounded-lg shadow-sm hover:bg-secondary/90 transition-colors duration-200;
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .stat-card {
+    @apply bg-white p-6 rounded-lg shadow-md text-center;
+  }
+
+  .faculty-card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .team-card {
+    @apply bg-white p-6 rounded-lg shadow-md;
+  }
+
+  .contact-card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .contact-icon-wrapper {
+    @apply w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4;
+  }
+
+  .contact-text {
+    @apply text-gray-600 hover:text-primary transition-colors duration-200;
+  }
+
+  .social-icon {
+    @apply w-8 h-8 text-gray-600 hover:text-primary transition-colors duration-200;
+  }
+}
