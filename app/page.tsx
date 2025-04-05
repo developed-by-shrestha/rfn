@@ -341,15 +341,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-bold mb-2">Arbind Chaudhari</h4>
                 <p className="text-gray-600">Economics and Climate Change</p>
-              </div>
-              <div className="team-card fade-in">
-                <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src="bishnu.jpg"
-                    alt="Bishnu Prasad Dhakal"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
                 <h4 className="text-xl font-bold mb-2">Bishnu Prasad Dhakal</h4>
                 <p className="text-gray-600">Physics</p>
               </div>
