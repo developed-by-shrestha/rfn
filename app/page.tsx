@@ -330,19 +330,23 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
               Researchers
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="team-card fade-in">
-                <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src="./ac.png"
-                    alt="Arbind Chaudhari"
-                    className="w-full h-full object-cover"
-                  />
+            <div className="grid md:grid-cols-1 gap-6">
+              <div className="mb-12 flex justify-center">
+                <div className="md:max-w-[24rem] w-full">
+                  <div className="team-card fade-in">
+                    <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                      <img
+                        src="./ac.png"
+                        alt="Arbind Chaudhari"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h4 className="text-xl font-bold mb-2">Arbind Chaudhari</h4>
+                    <p className="text-gray-600">
+                      Economics and Climate Change
+                    </p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold mb-2">Arbind Chaudhari</h4>
-                <p className="text-gray-600">Economics and Climate Change</p>
-                <h4 className="text-xl font-bold mb-2">Bishnu Prasad Dhakal</h4>
-                <p className="text-gray-600">Physics</p>
               </div>
             </div>
           </div>
