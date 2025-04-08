@@ -260,24 +260,22 @@ export default function Home() {
           </h2>
 
           {/* Leadership */}
-          <div className="mb-12 flex justify-center">
-            <div className="md:max-w-[24rem] w-full">
-              <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
-                Leadership
-              </h3>
-              <div className="grid md:grid-cols-1 gap-6">
-                <div className="team-card fade-in">
-                  <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                    <img
-                      src="/tilakraj.png"
-                      alt="Tilak Raj Bhandari"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">Tilak Raj Bhandari</h4>
-                  <p className="text-gray-600">Chairman</p>
-                </div>
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
+              Leadership
+            </h3>
+            <div className="team-card fade-in mx-auto max-w-[24rem]">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src="/tilakraj.png"
+                  alt="Portrait of Tilak Raj Bhandari"
+                  className="w-full h-full object-cover"
+                />
               </div>
+              <h4 className="text-xl font-bold mb-2 text-center">
+                Tilak Raj Bhandari
+              </h4>
+              <p className="text-gray-600 text-center">Chairman</p>
             </div>
           </div>
 
@@ -287,67 +285,71 @@ export default function Home() {
               Advisors
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="team-card fade-in">
-                <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src="/ramesh.jpg"
-                    alt="Ramesh Kumar Malla"
-                    className="w-full h-full object-cover"
-                  />
+              {[
+                {
+                  name: "Ramesh Kumar Malla",
+                  role: "Advisor",
+                  img: "/ramesh.jpg",
+                },
+                {
+                  name: "Popular Gentle Bhusal",
+                  role: "Advisor",
+                  img: "/pgb.png",
+                },
+                {
+                  name: "Bim Bahadur Shrestha",
+                  role: "Advisor",
+                  img: "/bim.jpg",
+                },
+              ].map((member, index) => (
+                <div key={index} className="team-card fade-in text-center">
+                  <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={member.img}
+                      alt={`Portrait of ${member.name}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold mb-2">{member.name}</h4>
+                  <p className="text-gray-600">{member.role}</p>
                 </div>
-                <h4 className="text-xl font-bold mb-2">Ramesh Kumar Malla</h4>
-                <p className="text-gray-600">Advisor</p>
-              </div>
-              <div className="team-card fade-in">
-                <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src="/pgb.png"
-                    alt="Popular Gentle Bhusal"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h4 className="text-xl font-bold mb-2">
-                  Popular Gentle Bhusal
-                </h4>
-                <p className="text-gray-600">Advisor</p>
-              </div>
-              <div className="team-card fade-in">
-                <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src="bim.jpg"
-                    alt="Bim Bahadur Shrestha"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h4 className="text-xl font-bold mb-2">Bim Bahadur Shrestha</h4>
-                <p className="text-gray-600">Advisor</p>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Researchers */}
-          <div>
+          <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
               Researchers
             </h3>
-            <div className="grid md:grid-cols-1 gap-6">
-              <div className="mb-12 flex justify-center">
-                <div className="md:max-w-[24rem] w-full">
-                  <div className="team-card fade-in">
-                    <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                      <img
-                        src="./ac.png"
-                        alt="Arbind Chaudhari"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h4 className="text-xl font-bold mb-2">Arbind Chaudhari</h4>
-                    <p className="text-gray-600">
-                      Economics and Climate Change
-                    </p>
-                  </div>
-                </div>
+            <div className="team-card fade-in mx-auto max-w-[24rem] text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src="/ac.png"
+                  alt="Portrait of Arbind Chaudhari"
+                  className="w-full h-full object-cover"
+                />
               </div>
+              <h4 className="text-xl font-bold mb-2">Arbind Chaudhari</h4>
+              <p className="text-gray-600">Economics and Climate Change</p>
+            </div>
+          </div>
+
+          {/* Interns */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
+              Interns
+            </h3>
+            <div className="team-card fade-in mx-auto max-w-[24rem] text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src="/mc.png"
+                  alt="Portrait of Mahendra Bahadur Chand"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl font-bold mb-2">Mahendra Bahadur Chand</h4>
+              <p className="text-gray-600">Intern</p>
             </div>
           </div>
         </div>
