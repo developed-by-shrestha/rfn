@@ -331,7 +331,7 @@ export default function Home() {
                 },
                 {
                   name: "Mahendra Bahadur Chand",
-                  role: "Economics and Technology",
+                  role: "Economics Policy",
                   img: "/mc.png",
                 },
               ].map((member, index) => (
