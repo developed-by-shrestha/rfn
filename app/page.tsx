@@ -320,36 +320,36 @@ export default function Home() {
           {/* Researchers */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
-              Researchers
+              Research Fellows
             </h3>
-            <div className="team-card fade-in mx-auto max-w-[24rem] text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src="/ac.png"
-                  alt="Portrait of Arbind Chaudhari"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl font-bold mb-2">Arbind Chaudhari</h4>
-              <p className="text-gray-600">Economics and Climate Change</p>
-            </div>
-          </div>
-
-          {/* Interns */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
-              Interns
-            </h3>
-            <div className="team-card fade-in mx-auto max-w-[24rem] text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src="/mc.png"
-                  alt="Portrait of Mahendra Bahadur Chand"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl font-bold mb-2">Mahendra Bahadur Chand</h4>
-              <p className="text-gray-600">Intern</p>
+            <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+              {[
+                {
+                  name: "Arbind Chaudhari",
+                  role: "Economics and Climate Change",
+                  img: "/ac.png",
+                },
+                {
+                  name: "Arbind Chaudhari",
+                  role: "Economics and Climate Change",
+                  img: "/ac.png",
+                },
+              ].map((member, index) => (
+                <div
+                  key={index}
+                  className="team-card fade-in mx-auto max-w-[25rem] text-center"
+                >
+                  <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={member.img}
+                      alt={`Portrait of ${member.name}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold mb-2">{member.name}</h4>
+                  <p className="text-gray-600">{member.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
