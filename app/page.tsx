@@ -330,9 +330,9 @@ export default function Home() {
                   img: "/ac.png",
                 },
                 {
-                  name: "Arbind Chaudhari",
-                  role: "Economics and Climate Change",
-                  img: "/ac.png",
+                  name: "Mahendra Bahadur Chand",
+                  role: "Economics and Technology",
+                  img: "/mc.png",
                 },
               ].map((member, index) => (
                 <div
