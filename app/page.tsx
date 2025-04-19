@@ -259,26 +259,6 @@ export default function Home() {
             Our Team
           </h2>
 
-          {/* Leadership */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
-              Leadership
-            </h3>
-            <div className="team-card fade-in mx-auto max-w-[24rem]">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src="/tilakraj.png"
-                  alt="Portrait of Tilak Raj Bhandari"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl font-bold mb-2 text-center">
-                Tilak Raj Bhandari
-              </h4>
-              <p className="text-gray-600 text-center">Chairman</p>
-            </div>
-          </div>
-
           {/* Advisors */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
@@ -314,6 +294,26 @@ export default function Home() {
                   <p className="text-gray-600">{member.role}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Leadership */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
+              Leadership
+            </h3>
+            <div className="team-card fade-in mx-auto max-w-[24rem]">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src="/tilakraj.png"
+                  alt="Portrait of Tilak Raj Bhandari"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl font-bold mb-2 text-center">
+                Tilak Raj Bhandari
+              </h4>
+              <p className="text-gray-600 text-center">Chairman</p>
             </div>
           </div>
 
