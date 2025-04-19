@@ -8,17 +8,27 @@ import {
   Code,
   Building2,
   LineChart,
-  Users,
+  // Users, // Removed if not used elsewhere
   Mail,
   Phone,
   MapPin,
-  BookOpen,
+  // BookOpen, // Removed if not used elsewhere
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import TeamMemberDialog from "@/components/ui/teammemberdialog"; // Import the dialog component
+
+// Define the TeamMember interface
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string; // Changed from img to image for consistency
+  description: string; // Added description field
+}
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null); // State for the dialog
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -56,11 +66,90 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Function to open the dialog
+  const openMemberDialog = (member: TeamMember) => {
+    setSelectedMember(member);
+  };
+
+  // Team member data arrays using the TeamMember interface
+  const advisors: TeamMember[] = [
+    {
+      name: "Ramesh Kumar Malla",
+      role: "Advisor",
+      image: "/ramesh.jpg", // Use 'image' key
+      description:
+        "Placeholder description for Ramesh Kumar Malla. Detail his expertise and contributions.", // Added description
+    },
+    {
+      name: "Popular Gentle Bhusal",
+      role: "Advisor",
+      image: "/pgb.png", // Use 'image' key
+      description:
+        "Placeholder description for Popular Gentle Bhusal. Detail his expertise and contributions, perhaps focusing on climate change.", // Added description
+    },
+    {
+      name: "Bim Bahadur Shrestha",
+      role: "Advisor",
+      image: "/bim.jpg", // Use 'image' key
+      description:
+        "Placeholder description for Bim Bahadur Shrestha. Detail his expertise and contributions, potentially in national development.", // Added description
+    },
+  ];
+
+  const leadership: TeamMember[] = [
+    {
+      name: "Tilak Raj Bhandari",
+      role: "Chairman",
+      image: "/tilakraj.png", // Use 'image' key
+      description:
+        "Placeholder description for Tilak Raj Bhandari. Detail his leadership role and vision for the organization.", // Added description
+    },
+  ];
+
+  const researchers: TeamMember[] = [
+    // Changed variable name for consistency, keep title as 'Research Fellows'
+    {
+      name: "Arbind Chaudhari",
+      role: "Economics and Climate Change",
+      image: "/ac.png", // Use 'image' key
+      description:
+        "Placeholder description for Arbind Chaudhari. Detail his research focus on economics and climate change.", // Added description
+    },
+    {
+      name: "Mahendra Bahadur Chand",
+      role: "Economics Policy",
+      image: "/mc.png", // Use 'image' key
+      description:
+        "Placeholder description for Mahendra Bahadur Chand. Detail his research focus on economic policy.", // Added description
+    },
+  ];
+
+  // Reusable function to render team member cards
+  const renderTeamMemberCard = (member: TeamMember) => (
+    <div key={member.name} className="team-card fade-in text-center">
+      <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
+        <img
+          src={member.image} // Use member.image
+          alt={`Portrait of ${member.name}`}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <h4 className="text-xl font-bold mb-2">{member.name}</h4>
+      <p className="text-gray-600 mb-2">{member.role}</p>
+      <button
+        onClick={() => openMemberDialog(member)}
+        className="text-primary hover:text-primary/80 underline text-sm transition-colors"
+      >
+        Read more
+      </button>
+    </div>
+  );
+
   return (
     <main className="overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Hero Section (Content unchanged) */}
       <section className="relative h-screen flex items-center justify-center">
         <div
           className="absolute inset-0 z-0"
@@ -78,7 +167,9 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in">
             Diverse Nepal, Prosperous Nepali
           </h1>
-          <p className="text-lg md:text-xl max-w-2x1 mx-auto mb-8 fade-in">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 fade-in">
+            {" "}
+            {/* Corrected max-w-2x1 to max-w-2xl */}
             Fostering knowledge-driven national development through research and
             innovation.
           </p>
@@ -87,7 +178,7 @@ export default function Home() {
               onClick={() => scrollToSection("contact")}
               className="btn-primary"
             >
-              Contact Us
+              Contact Us {/* Changed from Join Us */}
             </button>
             <button
               onClick={() => scrollToSection("about")}
@@ -106,7 +197,7 @@ export default function Home() {
         </button>
       </section>
 
-      {/* Faculties Section */}
+      {/* Faculties Section (Content unchanged) */}
       <section id="faculties" className="section bg-muted">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl text-center mb-12 fade-in">
@@ -145,7 +236,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section (Content unchanged) */}
       <section id="about" className="section bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl text-center mb-12 fade-in">
@@ -252,7 +343,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - FORMAT MODIFIED */}
       <section id="team" className="section bg-muted">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl text-center mb-12 fade-in">
@@ -264,98 +355,40 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
               Advisors
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  name: "Ramesh Kumar Malla",
-                  role: "Advisor",
-                  img: "/ramesh.jpg",
-                },
-                {
-                  name: "Popular Gentle Bhusal",
-                  role: "Advisor",
-                  img: "/pgb.png",
-                },
-                {
-                  name: "Bim Bahadur Shrestha",
-                  role: "Advisor",
-                  img: "/bim.jpg",
-                },
-              ].map((member, index) => (
-                <div key={index} className="team-card fade-in text-center">
-                  <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                    <img
-                      src={member.img}
-                      alt={`Portrait of ${member.name}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">{member.name}</h4>
-                  <p className="text-gray-600">{member.role}</p>
-                </div>
-              ))}
+            {/* Use grid layout similar to first snippet, adjusted for 3 members */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {advisors.map((advisor) => renderTeamMemberCard(advisor))}
             </div>
           </div>
 
-          {/* Leadership */}
+          {/* Chairman */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
-              Leadership
+              Chairman
             </h3>
-            <div className="team-card fade-in mx-auto max-w-[24rem]">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src="/tilakraj.png"
-                  alt="Portrait of Tilak Raj Bhandari"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl font-bold mb-2 text-center">
-                Tilak Raj Bhandari
-              </h4>
-              <p className="text-gray-600 text-center">Chairman</p>
+            <div className="grid md:grid-cols-1 gap-6 max-w-lg mx-auto">
+              {leadership.map((leader) => renderTeamMemberCard(leader))}
             </div>
           </div>
 
           {/* Researchers */}
           <div className="mb-12">
+            {" "}
+            {/* Added mb-12 for spacing */}
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 fade-in">
               Research Fellows
             </h3>
-            <div className="flex flex-col md:flex-row justify-center items-start gap-8">
-              {[
-                {
-                  name: "Arbind Chaudhari",
-                  role: "Economics and Climate Change",
-                  img: "/ac.png",
-                },
-                {
-                  name: "Mahendra Bahadur Chand",
-                  role: "Economics Policy",
-                  img: "/mc.png",
-                },
-              ].map((member, index) => (
-                <div
-                  key={index}
-                  className="team-card fade-in mx-auto max-w-[25rem] text-center"
-                >
-                  <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
-                    <img
-                      src={member.img}
-                      alt={`Portrait of ${member.name}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">{member.name}</h4>
-                  <p className="text-gray-600">{member.role}</p>
-                </div>
-              ))}
+            {/* Use grid layout similar to first snippet */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {researchers.map((researcher) =>
+                renderTeamMemberCard(researcher)
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section (Content unchanged) */}
       <section id="contact" className="section bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl text-center mb-12 fade-in">
@@ -403,14 +436,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer (Content unchanged) */}
       <footer className="bg-gray-50 py-12">
         <div className="container-custom">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <img
-                  src="/logo.png"
+                  src="/logo.png" // Make sure this path is correct
                   alt="Research For Nepal Logo"
                   className={`w-14 h-14 object-contain`}
                 />
@@ -471,6 +504,15 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Team Member Dialog */}
+      {selectedMember && (
+        <TeamMemberDialog
+          isOpen={!!selectedMember}
+          onClose={() => setSelectedMember(null)}
+          member={selectedMember}
+        />
+      )}
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
