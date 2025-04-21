@@ -85,7 +85,13 @@ export default function Home() {
       role: "Advisor",
       image: "/pgb.png", // Use 'image' key
       description:
-        "Placeholder description for Popular Gentle Bhusal. Detail his expertise and contributions, perhaps focusing on climate change.", // Added description
+        "Popular has over 25 years of experience in research, policy and program interface with a primary focus on climate change adaptation, natural resource governance, livelihoods, poverty reduction, and gender equality and social inclusion. He has accomplished his PhD in climate change adaptation from Charles Sturt University in Australia, where he is also an Adjunct Senior Research Fellow from 2014 to date. Popular has obtained Masters degree in Forestry from the University of Canterbury, New Zealand and a Masters in Ecology from the Tribhuvan University, Nepal. From June 2023-July 2024, Popular served as a Climate Change and Environment Advisor to the Rt. Hon. Prime Minister of Nepal. His past assignments include Deputy Country Director for CARE International in Nepal, Team Leader- Oxford Policy Management, and Country Director for Ipas USA in Nepal. Popular’s research has been extensively published on topics including climate change adaptation, livelihoods, natural resource governance, poverty, and gender.", // Added description
+
+      links: [
+        // Array of links
+        "https://www.researchgate.net/profile/Popular-Gentle?ev=hdr_xprf",
+        "https://scholar.google.com/citations?hl=en&user=oYmpREwAAAAJ&view_op=list_works",
+      ],
     },
     {
       name: "Bim Bahadur Shrestha",
@@ -119,8 +125,13 @@ export default function Home() {
       name: "Mahendra Bahadur Chand",
       role: "Economics Policy",
       image: "/mc.png", // Use 'image' key
-      description:
-        "Placeholder description for Mahendra Bahadur Chand. Detail his research focus on economic policy.", // Added description
+      description: `Mahendra Bahadur Chand is a driven Research Intern at Research For Nepal and a Lecturer at Padma Kanya Multiple Campus, where he integrates academic expertise in economics with emerging technologies to design sustainable policy solutions. Holding an MA in Economics from Tribhuvan University with a focus on financial literacy and inclusion, he is skilled in STATA, econometric modeling, and data-driven strategy development. Mahendra’s experience spans leading research initiatives, presenting at international conferences (CAICE, FICE, NECS), and mentoring youth entrepreneurs through the Youth Self-Employment Fund. At Bhandari IT, he contributes to projects at the nexus of economics and technology, aiming to create actionable, scalable solutions for Nepal’s socio-economic development. A collaborative team player, he brings academic rigor and grassroots insight to promote inclusive growth and institutional reform.`, // Main description text
+      links: [
+        // Array of links
+        "https://www.nepjol.info/index.php/tjec?utm",
+        "https://elibrary.tucl.edu.np/bitstreams/3f73757c-f0aa-41ee-98be-a02a6131638f/download?utm",
+        "https://www.researchgate.net/profile/Mahendra-Chand?",
+      ], // Corrected description using backticks
     },
   ];
 
