@@ -82,11 +82,11 @@ export default function Home() {
   // Team member data arrays using the TeamMember interface
   const advisors: TeamMember[] = [
     {
-      name: "Ramesh Kumar Malla",
+      name: "Ramesh Kumar Mallaa",
       role: "Advisor",
       image: "/ramesh.jpg", // Use 'image' key
       description:
-        "Placeholder description for Ramesh Kumar Malla. Detail his expertise and contributions.", // Added description
+        "Ramesh Malla is a central committee member of the Communist Party of Nepal (Maoist Centre). He is the former central president of the All Nepal National Independent Students' Union (Revolutionary), a leading student organization in Nepal's student movement. He played a key role in supporting Pushpa Kamal Dahal ‘Prachanda’—the first Prime Minister of Federal Democratic Republic of Nepal—during his second and third terms as Private Secretary. Prior to that, he also served as an advisor to the then Minister of Education, Dinanath Sharma. Malla is also a former senate member of Tribhuvan University.During his involvement in the student movement, he served as editor for publications such as Janasangram, Sangeen, and Yoddha. He has also authored a book titled Chimek Yatra (2074 B.S.), which shares his personal experiences and insights on Nepal’s neighborhood relations.As part of the Prime Minister’s official delegation, Malla has visited countries including India, China, Italy, and the United Arab Emirates. He participated as a delegate in the United Nations Food Systems Summit 2023 (Italy) and the COP28 UAE international conference on climate change. Malla took part in Nepal’s historic Maoist People's War and the People’s Movement of 2005/06 (2062/063 B.S.), both of which played a transformative role in the country’s political change. He has also led several social and educational movements and campaigns. He holds a master’s degree in Political Science from Tribhuvan University. He was born in Salyan, Nepal.", // Added description
     },
     {
       name: "Popular Gentle Bhusal",
@@ -116,7 +116,7 @@ export default function Home() {
       role: "Chairman",
       image: "/tilakraj.png", // Use 'image' key
       description:
-        "Placeholder description for Tilak Raj Bhandari. Detail his leadership role and vision for the organization.", // Added description
+        "Tilak Raj Bhandari is a dedicated communist leader and central committee member of the Nepal Communist Party (Maoist Centre), with a remarkable journey from a modest farming background to a prominent political figure. Overcoming early hardships through labor work to fund his education, he earned a Master’s in political science and an LLB, becoming a lawyer. His political career began in student activism, evolving into a key role in Nepal’s underground People’s War and the establishment of a federal democratic republic. Alongside his political work, Bhandari runs Everest Associates, a law firm, and Research for Nepal, advocating for education, self-reliance, and dynamic leadership to address modern societal challenges. Known for his integrity and simplicity, he remains a respected and approachable leader.", // Added description
     },
   ];
 
