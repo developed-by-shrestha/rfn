@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
@@ -8,28 +7,28 @@ import {
   Code,
   Building2,
   LineChart,
-  // Users, // Removed if not used elsewhere
   Mail,
   Phone,
   MapPin,
-  // BookOpen, // Removed if not used elsewhere
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import TeamMemberDialog from "@/components/ui/teammemberdialog"; // Import the dialog component
+import TeamMemberDialog from "@/components/ui/teammemberdialog";
+import AboutUsDialog from "@/components/ui/aboutusdialog"; // <-- Import the new dialog
 
-// Define the TeamMember interface
+// Define the TeamMember interface (keep as is)
 interface TeamMember {
   name: string;
   role: string;
-  image: string; // Changed from img to image for consistency
-  description: string; // Added description field
+  image: string;
+  description: string;
   links?: string[];
 }
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null); // State for the dialog
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [isAboutUsDialogOpen, setIsAboutUsDialogOpen] = useState(false); // <-- State for About Us dialog
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -70,6 +69,14 @@ export default function Home() {
   // Function to open the dialog
   const openMemberDialog = (member: TeamMember) => {
     setSelectedMember(member);
+  };
+
+  // <-- Functions to control the About Us dialog -->
+  const openAboutUsDialog = () => {
+    setIsAboutUsDialogOpen(true);
+  };
+  const closeAboutUsDialog = () => {
+    setIsAboutUsDialogOpen(false);
   };
 
   // Team member data arrays using the TeamMember interface
@@ -158,7 +165,7 @@ export default function Home() {
   );
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="flex min-h-screen flex-col">
       <Navbar />
 
       {/* Hero Section (Content unchanged) */}
@@ -248,99 +255,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section (Content unchanged) */}
+      {/* About Section - MODIFIED */}
       <section id="about" className="section bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl text-center mb-12 fade-in">
             About Us
           </h2>
           <div className="max-w-4xl mx-auto space-y-8 fade-in">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-gray-600 mb-6">
-                Research for Nepal (RfN) is a pioneering non-profit research
-                institute, established in 2023 with the vision of fostering
-                knowledge-driven national development. Our motto, "Diverse
-                Nepal, Prosperous Nepali," reflects our commitment to utilizing
-                Nepal's rich technological, industrial, cultural, environmental,
-                and economic diversity to drive inclusive and sustainable
-                progress.
-              </p>
+            {/* Keep the intro paragraph */}
+            <p className="text-lg text-gray-600 mb-6">
+              Research for Nepal (RfN) is a pioneering non-profit research
+              institute, established in 2023 with the vision of fostering
+              knowledge-driven national development. Our motto, "Diverse Nepal,
+              Prosperous Nepali," reflects our commitment to utilizing Nepal's
+              rich technological, industrial, cultural, environmental, and
+              economic diversity to drive inclusive and sustainable progress.
+            </p>
 
-              <p className="text-lg text-gray-600 mb-6">
-                In an era of rapid global transformation, Nepal encounters both
-                challenges and opportunities in critical areas such as climate
-                change adaptation, technological innovation, industrial growth,
-                economic sustainability, and policy modernization. To tackle
-                these issues, Research for Nepal was established with the
-                following goals:
-              </p>
+            {/* Add the "Read More" button */}
+            <button
+              onClick={openAboutUsDialog} // <-- Trigger the About Us dialog
+              className="btn-secondary mx-auto block" // Style as needed, e.g., similar to Learn More
+            >
+              Read More About Us
+            </button>
 
-              <ul className="space-y-4 text-gray-600 list-decimal pl-6 mb-8">
-                <li>
-                  Promoting innovation, modernization, expansion, and
-                  competitiveness within Nepal's industrial and technological
-                  sectors.
-                </li>
-                <li>
-                  Strengthening the international standing of Nepal's research
-                  community through collaboration and knowledge exchange.
-                </li>
-                <li>
-                  Providing cutting-edge solutions and technologies to meet
-                  emerging public and private sector needs.
-                </li>
-                <li>
-                  Advising the government and other public institutions on
-                  policy formulation, governance, investment and strategic
-                  decision-making.
-                </li>
-                <li>
-                  Developing human capital by empowering researchers,
-                  technologists, and scholars through training, mentorship, and
-                  academic collaboration.
-                </li>
-              </ul>
-
-              <p className="text-lg text-gray-600 mb-6">
-                At Research for Nepal, our greatest asset is knowledge—driven by
-                the people who create, refine, and apply it. Our team consists
-                of:
-              </p>
-
-              <ul className="space-y-4 text-gray-600 list-decimal pl-6 mb-8">
-                <li>
-                  Dedicated researchers and technologists committed to advancing
-                  Nepal's research landscape.
-                </li>
-                <li>
-                  Aspiring young scholars from diverse academic backgrounds,
-                  actively engaged in graduate and postgraduate studies at
-                  leading universities in Nepal.
-                </li>
-                <li>
-                  Research associates from universities, private firms, and
-                  research institutions who actively contribute to our
-                  initiatives.
-                </li>
-              </ul>
-
-              <p className="text-lg text-gray-600 mb-6">
-                Through interdisciplinary research, policy advocacy, and
-                capacity-building programs, RfN aims to bridge the gap between
-                academic research and real-world application, ensuring that
-                knowledge leads to tangible societal progress. We believe that
-                by investing in research, innovation, and human capital, Nepal
-                can emerge as a globally recognized hub of knowledge and
-                sustainable development.
-              </p>
-
-              <p className="text-lg text-gray-600">
-                We invite researchers, policymakers, students, and organizations
-                to collaborate with us in shaping a stronger, more resilient,
-                and prosperous Nepal.
-              </p>
-            </div>
-
+            {/* Keep the stats section if desired */}
             <div className="grid grid-cols-2 gap-4 mt-12">
               <div className="stat-card">
                 <h4 className="text-3xl font-bold text-primary">5+</h4>
@@ -517,6 +457,8 @@ export default function Home() {
         </div>
       </footer>
 
+      {/* --- Render Dialogs --- */}
+
       {/* Team Member Dialog */}
       {selectedMember && (
         <TeamMemberDialog
@@ -525,6 +467,12 @@ export default function Home() {
           member={selectedMember}
         />
       )}
+
+      {/* About Us Dialog <-- Add this */}
+      <AboutUsDialog
+        isOpen={isAboutUsDialogOpen}
+        onClose={closeAboutUsDialog}
+      />
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
