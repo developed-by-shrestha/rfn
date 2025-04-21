@@ -23,6 +23,7 @@ interface TeamMember {
   role: string;
   image: string; // Changed from img to image for consistency
   description: string; // Added description field
+  links?: string[];
 }
 
 export default function Home() {
