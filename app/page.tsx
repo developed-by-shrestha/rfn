@@ -82,20 +82,37 @@ export default function Home() {
   // Team member data arrays using the TeamMember interface
   const advisors: TeamMember[] = [
     {
-      name: "Ramesh Kumar Mallaa",
+      name: "Ramesh Kumar Malla",
       role: "Advisor",
       image: "/ramesh.jpg", // Use 'image' key
-      description:
-        "Ramesh Malla is a central committee member of the Communist Party of Nepal (Maoist Centre). He is the former central president of the All Nepal National Independent Students' Union (Revolutionary), a leading student organization in Nepal's student movement. He played a key role in supporting Pushpa Kamal Dahal ‘Prachanda’—the first Prime Minister of Federal Democratic Republic of Nepal—during his second and third terms as Private Secretary. Prior to that, he also served as an advisor to the then Minister of Education, Dinanath Sharma. Malla is also a former senate member of Tribhuvan University.During his involvement in the student movement, he served as editor for publications such as Janasangram, Sangeen, and Yoddha. He has also authored a book titled Chimek Yatra (2074 B.S.), which shares his personal experiences and insights on Nepal’s neighborhood relations.As part of the Prime Minister’s official delegation, Malla has visited countries including India, China, Italy, and the United Arab Emirates. He participated as a delegate in the United Nations Food Systems Summit 2023 (Italy) and the COP28 UAE international conference on climate change. Malla took part in Nepal’s historic Maoist People's War and the People’s Movement of 2005/06 (2062/063 B.S.), both of which played a transformative role in the country’s political change. He has also led several social and educational movements and campaigns. He holds a master’s degree in Political Science from Tribhuvan University. He was born in Salyan, Nepal.", // Added description
+      description: `Ramesh Malla is a central committee member of the Communist Party of Nepal (Maoist Centre). He formerly served as the central president of the All Nepal National Independent Students' Union (Revolutionary), a prominent student organization that played a significant role in Nepal’s student movement.
+
+Malla was a key figure in supporting Pushpa Kamal Dahal ‘Prachanda’, the first Prime Minister of the Federal Democratic Republic of Nepal, serving as his Private Secretary during both his second and third terms in office. Prior to that, he also held the position of Advisor to the Minister of Education, then led by Dinanath Sharma.
+
+In academia, Malla is a former Senate member of Tribhuvan University, Nepal's oldest and largest university. During his years in the student movement, he contributed to political discourse as an editor of influential publications such as Janasangram, Sangeen, and Yoddha. He is also the author of Chimek Yatra (2074 B.S.), a book reflecting his personal insights and experiences on Nepal’s neighborhood relations.
+
+As part of the Prime Minister’s official delegation, Malla has represented Nepal on several international visits, including to India, China, Italy, and the United Arab Emirates. He participated as a delegate in the United Nations Food Systems Summit 2023 in Italy and attended the COP28 international conference on climate change in the UAE.
+
+Malla was actively involved in Nepal’s historic Maoist People’s War and the People’s Movement of 2005/06 (2062/63 B.S.), both of which were instrumental in the country’s political transformation. He has led numerous social and educational campaigns throughout his career.
+
+He holds a Master’s degree in Political Science from Tribhuvan University and was born in Salyan, Nepal.`, // Added description
       links: ["https://rameshmalla.com.np/"],
     },
     {
       name: "Popular Gentle Bhusal",
       role: "Advisor",
       image: "/pgb.png", // Use 'image' key
-      description:
-        "Popular has over 25 years of experience in research, policy and program interface with a primary focus on climate change adaptation, natural resource governance, livelihoods, poverty reduction, and gender equality and social inclusion. He has accomplished his PhD in climate change adaptation from Charles Sturt University in Australia, where he is also an Adjunct Senior Research Fellow from 2014 to date. Popular has obtained Masters degree in Forestry from the University of Canterbury, New Zealand and a Masters in Ecology from the Tribhuvan University, Nepal. From June 2023-July 2024, Popular served as a Climate Change and Environment Advisor to the Rt. Hon. Prime Minister of Nepal. His past assignments include Deputy Country Director for CARE International in Nepal, Team Leader- Oxford Policy Management, and Country Director for Ipas USA in Nepal. Popular’s research has been extensively published on topics including climate change adaptation, livelihoods, natural resource governance, poverty, and gender.", // Added description
+      description: `Popular has over 25 years of experience at the intersection of research, policy, and program implementation, with a primary focus on climate change adaptation, natural resource governance, livelihoods, poverty reduction, and gender equality and social inclusion (GESI).
 
+He holds a PhD in Climate Change Adaptation from Charles Sturt University, Australia, where he has also served as an Adjunct Senior Research Fellow since 2014. In addition, he earned a Master’s degree in Forestry from the University of Canterbury, New Zealand, and a Master’s in Ecology from Tribhuvan University, Nepal.
+
+From June 2023 to July 2024, Popular served as the Climate Change and Environment Advisor to the Rt. Hon. Prime Minister of Nepal. His professional background includes several leadership roles, such as:
+
+1. Deputy Country Director, CARE International in Nepal
+2. Team Leader, Oxford Policy Management
+3. Country Director, Ipas USA in Nepal
+
+Popular’s work has been widely published, with a strong body of research covering climate change adaptation, livelihoods, natural resource governance, poverty alleviation, and gender equality. His contributions have made a meaningful impact on both national and international platforms addressing development and environmental resilience.`,
       links: [
         // Array of links
         "https://www.researchgate.net/profile/Popular-Gentle?ev=hdr_xprf",
@@ -106,8 +123,11 @@ export default function Home() {
       name: "Bim Bahadur Shrestha",
       role: "Advisor",
       image: "/bim.jpg", // Use 'image' key
-      description:
-        "Placeholder description for Bim Bahadur Shrestha. Detail his expertise and contributions, potentially in national development.", // Added description
+      description: `Prof. Bim Prasad Shrestha, PhD brings over 30 years of multidisciplinary experience in biosystems and agricultural engineering, with a particular emphasis on automation, image‑based quality assessment, energy applications, and sanitation technologies. He is a Professor at Kathmandu University’s School of Engineering and has served as an Affiliate Professor in Bioengineering at the University of Washington since 2021. Prof. Shrestha earned his BTech in Agricultural Engineering (Kerala Agricultural University, USAID), MSc in Agricultural Mechanization (University of Miyazaki, Japan), PhD in Agricultural Engineering (Kagoshima University, Japan), and completed a USDA‑supported postdoctoral fellowship at Michigan State University.
+
+He has led high‑profile grants totaling tens of millions of dollars from institutions including KOICA, the World Bank, the Bill & Melinda Gates Foundation, and the U.S. Department of State. His past leadership roles span Associate Dean, Department Head, Director for Student Welfare, and Global Engagement Office Founder at Kathmandu University, as well as coordinating foreign‑aid efforts at Nepal’s Prime Minister’s Office.
+
+Prof. Shrestha has authored numerous book chapters, peer‑reviewed journal articles, and conference presentations on topics ranging from near‑infrared spectroscopy for biomass analysis to GIS‑based disaster assessments. He actively fosters international collaborations across Asia, North America, and Europe and is fluent in Nepal Bhasa, Nepali, Hindi, Japanese, and English.`, // Added description
     },
   ];
 
@@ -128,14 +148,26 @@ export default function Home() {
       name: "Arbind Chaudhari",
       role: "Economics and Climate Change",
       image: "/ac.png", // Use 'image' key
-      description:
-        "Placeholder description for Arbind Chaudhari. Detail his research focus on economics and climate change.", // Added description
+      description: `Arbind Chaudhary is a development economist and policy consultant with extensive experience at the intersection of climate change, environmental economics, and public policy. With over a decade of applied research and consulting practice, Arbind has worked with both international and national policy institutions, including the International Food Policy Research Institute (IFPRI), Washington D.C., and the National Planning Commission (NPC), Government of Nepal. His work has contributed directly to national planning and climate change strategies, including SDG 3 (Good Health and Well-Being) and coordination across key federal ministries and provinces.
+
+He holds a Master’s degree in Economics from Tribhuvan University, where he also completed undergraduate studies in both Economics and Forestry Science. His research focuses on climate change, environment and resource economics, development and planning economics, and political economy.
+
+From April to August 2024, Arbind served as a Consultant at IFPRI, contributing to forward-looking research on methane emissions, climate policy integration in agriculture, and stakeholder mapping for climate action in Nepal. His recent peer-reviewed work includes publications in Cogent Social Sciences and submissions under review at the Journal of Economic Issues. He is also contributing a forthcoming chapter on spatial analysis for climate policy.
+
+In previous roles, he has coordinated development activities in Madhes Province and supported multiple ministries under Nepal’s federal structure through evidence-based research and planning. He also served as Lead Researcher at the Research Center for Development Studies (RCDS) from 2018 to 2021 and Research Associate at the Center for Social Inclusion and Federalism in 2018.
+
+Arbind is a recognized peer reviewer for several academic journals including Regional Sustainability, China Agricultural Economic Review, and Asian Journal of Economics, Business and Accounting. He is also a Life Member of the Nepal Economic Association and serves on the Advisory Committee of the Federation of Nepali Consumer Protection (FNCP), Bagmati Province.
+
+He brings proficiency in R, EViews, LaTeX, and advanced GIS and Remote Sensing tools like Google Earth Engine, especially applied to climate change impact assessment, spatial econometrics, and carbon and GHG inventory.`, // Added description
+      links: ["https://www.researchgate.net/profile/Arbind-Chaudhary-2"],
     },
     {
       name: "Mahendra Bahadur Chand",
       role: "Economics Policy",
       image: "/mc.png", // Use 'image' key
-      description: `Mahendra Bahadur Chand is a driven Research Intern at Research For Nepal and a Lecturer at Padma Kanya Multiple Campus, where he integrates academic expertise in economics with emerging technologies to design sustainable policy solutions. Holding an MA in Economics from Tribhuvan University with a focus on financial literacy and inclusion, he is skilled in STATA, econometric modeling, and data-driven strategy development. Mahendra’s experience spans leading research initiatives, presenting at international conferences (CAICE, FICE, NECS), and mentoring youth entrepreneurs through the Youth Self-Employment Fund. At Bhandari IT, he contributes to projects at the nexus of economics and technology, aiming to create actionable, scalable solutions for Nepal’s socio-economic development. A collaborative team player, he brings academic rigor and grassroots insight to promote inclusive growth and institutional reform.`, // Main description text
+      description: `Mahendra Bahadur Chand is a driven Research Intern at Research For Nepal and a Lecturer at Padma Kanya Multiple Campus, where he integrates academic expertise in economics with emerging technologies to design sustainable policy solutions. Holding an MA in Economics from Tribhuvan University with a focus on financial literacy and inclusion, he is skilled in STATA, econometric modeling, and data-driven strategy development. 
+      
+Mahendra’s experience spans leading research initiatives, presenting at international conferences (CAICE, FICE, NECS), and mentoring youth entrepreneurs through the Youth Self-Employment Fund. At Bhandari IT, he contributes to projects at the nexus of economics and technology, aiming to create actionable, scalable solutions for Nepal’s socio-economic development. A collaborative team player, he brings academic rigor and grassroots insight to promote inclusive growth and institutional reform.`, // Main description text
       links: [
         // Array of links
         "https://www.nepjol.info/index.php/tjec?utm",
