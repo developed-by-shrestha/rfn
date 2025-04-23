@@ -43,9 +43,7 @@ export default function TeamMemberDialog({
             <h4 className="text-lg font-semibold text-primary mb-2">
               {member.role}
             </h4>
-            <p className="text-gray-600 whitespace-pre-line">
-              {member.description}
-            </p>
+            <p className="text-gray-600 text-justify">{member.description}</p>
           </div>
         </div>
       </DialogContent>

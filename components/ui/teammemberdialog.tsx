@@ -47,7 +47,7 @@ export default function TeamMemberDialog({
             </h4>
             <div className="prose prose-sm max-w-none">
               {/* Display the main description paragraph */}
-              <p className="text-gray-600 whitespace-pre-wrap">
+              <p className="text-gray-600 whitespace-pre-wrap text-justify">
                 {member.description}
               </p>
 

@@ -166,7 +166,9 @@ Popular’s work has been widely published, with a strong body of research cover
       name: "Bim Bahadur Shrestha",
       role: "Advisor",
       image: "/bim.jpg",
-      description: `Prof. Bim Prasad Shrestha, PhD brings over 30 years of multidisciplinary experience in biosystems and agricultural engineering, with a particular emphasis on automation, image‑based quality assessment, energy applications, and sanitation technologies. He is a Professor at Kathmandu University’s School of Engineering and has served as an Affiliate Professor in Bioengineering at the University of Washington since 2021. Prof. Shrestha earned his BTech in Agricultural Engineering (Kerala Agricultural University, USAID), MSc in Agricultural Mechanization (University of Miyazaki, Japan), PhD in Agricultural Engineering (Kagoshima University, Japan), and completed a USDA‑supported postdoctoral fellowship at Michigan State University.
+      description: `Prof. Bim Prasad Shrestha, PhD brings over 30 years of multidisciplinary experience in biosystems and agricultural engineering, with a particular emphasis on automation, image‑based quality assessment, energy applications, and sanitation technologies. He is a Professor at Kathmandu University’s School of Engineering and has served as an Affiliate Professor in Bioengineering at the University of Washington since 2021. 
+      
+Prof. Shrestha earned his BTech in Agricultural Engineering (Kerala Agricultural University, USAID), MSc in Agricultural Mechanization (University of Miyazaki, Japan), PhD in Agricultural Engineering (Kagoshima University, Japan), and completed a USDA‑supported postdoctoral fellowship at Michigan State University.
 
 He has led high‑profile grants totaling tens of millions of dollars from institutions including KOICA, the World Bank, the Bill & Melinda Gates Foundation, and the U.S. Department of State. His past leadership roles span Associate Dean, Department Head, Director for Student Welfare, and Global Engagement Office Founder at Kathmandu University, as well as coordinating foreign‑aid efforts at Nepal’s Prime Minister’s Office.
 
@@ -179,8 +181,9 @@ Prof. Shrestha has authored numerous book chapters, peer‑reviewed journal arti
       name: "Tilak Raj Bhandari",
       role: "Chairman",
       image: "/tilakraj.png",
-      description:
-        "Tilak Raj Bhandari is a dedicated communist leader and central committee member of the Nepal Communist Party (Maoist Centre), with a remarkable journey from a modest farming background to a prominent political figure. Overcoming early hardships through labor work to fund his education, he earned a Master’s in political science and an LLB, becoming a lawyer. His political career began in student activism, evolving into a key role in Nepal’s underground People’s War and the establishment of a federal democratic republic. Alongside his political work, Bhandari runs Everest Associates, a law firm, and Research for Nepal, advocating for education, self-reliance, and dynamic leadership to address modern societal challenges. Known for his integrity and simplicity, he remains a respected and approachable leader.",
+      description: `Tilak Raj Bhandari is a dedicated communist leader and central committee member of the Nepal Communist Party (Maoist Centre), with a remarkable journey from a modest farming background to a prominent political figure. 
+        
+Overcoming early hardships through labor work to fund his education, he earned a Master’s in political science and an LLB, becoming a lawyer. His political career began in student activism, evolving into a key role in Nepal’s underground People’s War and the establishment of a federal democratic republic. Alongside his political work, Bhandari runs Everest Associates, a law firm, and Research for Nepal, advocating for education, self-reliance, and dynamic leadership to address modern societal challenges. Known for his integrity and simplicity, he remains a respected and approachable leader.`,
       links: ["https://www.tilakrajbhandari.com.np/"],
     },
   ];
@@ -335,7 +338,7 @@ Mahendra’s experience spans leading research initiatives, presenting at intern
             About Us
           </h2>
           <div className="max-w-4xl mx-auto space-y-8 fade-in">
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 mb-6 text-justify">
               Research for Nepal (RfN) is a pioneering non-profit research
               institute, established in 2023 with the vision of fostering
               knowledge-driven national development. Our motto, "Diverse Nepal,
