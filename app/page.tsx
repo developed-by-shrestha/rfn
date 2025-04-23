@@ -41,23 +41,41 @@ const BasicDialog = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md relative m-4">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
-          aria-label="Close dialog"
-        >
-          <X className="w-5 h-5" />
-        </button>
-        <h3 className="text-xl font-semibold mb-4">{title}</h3>
-        <div>{children}</div>
-        <div className="mt-6 text-right">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      {" "}
+      {/* Added p-4 for padding on small screens */}
+      {/* --- START EDITING THIS DIV --- */}
+      <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl relative m-4 flex flex-col max-h-[90vh]">
+        {" "}
+        {/* Increased max-w, added flex, flex-col, max-h */}
+        <div className="p-6 flex items-center justify-between border-b">
+          {" "}
+          {/* Header section */}
+          <h3 className="text-xl font-semibold">{title}</h3>
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-800"
+            aria-label="Close dialog"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+        {/* --- Content Area (Scrollable) --- */}
+        <div className="p-6 overflow-y-auto flex-grow">
+          {" "}
+          {/* Added overflow-y-auto and flex-grow */}
+          {children}
+        </div>
+        {/* --- End Content Area --- */}
+        <div className="p-4 text-right border-t bg-gray-50 rounded-b-lg">
+          {" "}
+          {/* Footer section */}
           <button onClick={onClose} className="btn-secondary">
             Close
           </button>
         </div>
       </div>
+      {/* --- STOP EDITING THIS DIV --- */}
     </div>
   );
 };
@@ -122,6 +140,40 @@ export default function Home() {
   // <-- Functions to control the Projects dialog -->
   const openProjectsDialog = () => setIsProjectsDialogOpen(true);
   const closeProjectsDialog = () => setIsProjectsDialogOpen(false);
+
+  // --- Keep this Project Data Definition ---
+  const completedProjects = [
+    {
+      id: 1,
+      nepaliTitle:
+        "१. सामाजिक सञ्जालबाट प्रवाह हुने भ्रामक सूचनाले पार्ने प्रभाव सम्बन्धी अनुसन्धान",
+      nepaliCitation: "(नेपाल दुरसंचार प्राधिकरण - २०७९-०८०)",
+      englishTitle:
+        "1. A Study on the Impact of Misinformation Spread through Social Media",
+      englishCitation: "(Nepal Telecommunications Authority – 2022/23)",
+    },
+    {
+      id: 2,
+      nepaliTitle: "२. नेपालमा ऊर्जा, जर्नल प्रकाशन",
+      nepaliCitation: "(ऊर्जा, सिचाई तथा जलश्रोत मन्त्रालय - २०८०-०८१)",
+      englishTitle: "2. Journal Publication on Energy in Nepal",
+      englishCitation:
+        "(Ministry of Energy, Irrigation, and Water Resources – 2023/24)",
+    },
+  ];
+
+  const ongoingProjects = [
+    {
+      id: 1,
+      nepaliTitle:
+        "१. बिद्युत क्षेत्रको बिकासमा बिद्युत सम्बन्धि कम्पनीबाट हुने हकप्रद शेयरको सार्बजनिक निष्कासनको आवश्यकता, निष्कासनको उपयुक्त आधार, निहित जोखिम लगायतका विषयको अध्ययन",
+      nepaliCitation: "(बिद्युत नियमन आयोग - २०८१-०८२)",
+      englishTitle:
+        "1. A Study on the Need, Proper Basis, and Associated Risks of Public Issuance of Rights Shares by Electricity-related Companies for the Development of the Power Sector",
+      englishCitation: "(Electricity Regulatory Commission – 2024/25)",
+    },
+  ];
+  // --- End Project Data Definition ---
 
   // Team member data arrays (Keep as is)
   const advisors: TeamMember[] = [
@@ -646,31 +698,76 @@ Mahendra’s experience spans leading research initiatives, presenting at intern
         onClose={closeProjectsDialog}
         title="Active Projects Status"
       >
-        <div className="overflow-x-auto">
-          <table className="w-full table-auto border-collapse border border-gray-300">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">
-                  Ongoing
-                </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">
-                  Completed
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border border-gray-300 px-4 py-2 text-gray-600">
-                  Coming Soon
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-gray-600">
-                  Coming Soon
-                </td>
-              </tr>
-              {/* Add more rows here if needed in the future */}
-            </tbody>
-          </table>
+        {/* --- START: List Content using Project Arrays --- */}
+        <div className="space-y-6 text-sm text-gray-700">
+          {" "}
+          {/* Outer container */}
+          {/* Completed Projects Section */}
+          <div>
+            <h4 className="text-lg font-semibold mb-3 text-gray-800">
+              सम्पन्न प्रोजेक्ट (Completed Projects)
+            </h4>
+            {/* Check if there are completed projects before mapping */}
+            {completedProjects.length > 0 ? (
+              <ul className="list-none space-y-4 pl-2">
+                {" "}
+                {/* Use list-none for bullet removal */}
+                {/* Map over the completedProjects array */}
+                {completedProjects.map((project) => (
+                  <li key={`completed-${project.id}`}>
+                    {" "}
+                    {/* Unique key for each list item */}
+                    <p className="font-medium">{project.nepaliTitle}</p>
+                    <p className="text-xs text-gray-500 mb-1">
+                      {project.nepaliCitation}
+                    </p>
+                    <p>{project.englishTitle}</p>
+                    <p className="text-xs text-gray-500">
+                      {project.englishCitation}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500 pl-2 italic">
+                No completed projects to display.
+              </p> // Placeholder if array is empty
+            )}
+          </div>
+          {/* Ongoing Projects Section */}
+          <div>
+            <h4 className="text-lg font-semibold mb-3 text-gray-800">
+              चालू प्रोजेक्ट (Ongoing Project)
+            </h4>
+            {/* Check if there are ongoing projects before mapping */}
+            {ongoingProjects.length > 0 ? (
+              <ul className="list-none space-y-4 pl-2">
+                {" "}
+                {/* Use list-none for bullet removal */}
+                {/* Map over the ongoingProjects array */}
+                {ongoingProjects.map((project) => (
+                  <li key={`ongoing-${project.id}`}>
+                    {" "}
+                    {/* Unique key for each list item */}
+                    <p className="font-medium">{project.nepaliTitle}</p>
+                    <p className="text-xs text-gray-500 mb-1">
+                      {project.nepaliCitation}
+                    </p>
+                    <p>{project.englishTitle}</p>
+                    <p className="text-xs text-gray-500">
+                      {project.englishCitation}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500 pl-2 italic">
+                No ongoing projects to display.
+              </p> // Placeholder if array is empty
+            )}
+          </div>
         </div>
+        {/* --- END: List Content --- */}
       </BasicDialog>
 
       {/* Scroll to Top Button (Unchanged) */}
