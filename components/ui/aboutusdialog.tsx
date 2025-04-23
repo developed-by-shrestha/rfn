@@ -31,7 +31,7 @@ const AboutUsDialog: React.FC<AboutUsDialogProps> = ({ isOpen, onClose }) => {
         {/* Make content scrollable */}
         <div className="prose prose-lg max-w-none overflow-y-auto pr-6 mt-4">
           {/* --- PASTE THE FULL ORIGINAL "ABOUT US" CONTENT HERE --- */}
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6 text-justify">
             Research for Nepal (RfN) is a pioneering non-profit research
             institute, established in 2023 with the vision of fostering
             knowledge-driven national development. Our motto, "Diverse Nepal,
@@ -40,7 +40,7 @@ const AboutUsDialog: React.FC<AboutUsDialogProps> = ({ isOpen, onClose }) => {
             economic diversity to drive inclusive and sustainable progress.
           </p>
 
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6 text-justify">
             In an era of rapid global transformation, Nepal encounters both
             challenges and opportunities in critical areas such as climate
             change adaptation, technological innovation, industrial growth,
@@ -48,7 +48,7 @@ const AboutUsDialog: React.FC<AboutUsDialogProps> = ({ isOpen, onClose }) => {
             issues, Research for Nepal was established with the following goals:
           </p>
 
-          <ul className="space-y-4 text-gray-600 list-decimal pl-6 mb-8">
+          <ul className="space-y-4 text-gray-600 list-decimal pl-6 mb-8 text-justify">
             <li>
               Promoting innovation, modernization, expansion, and
               competitiveness within Nepal's industrial and technological
@@ -73,12 +73,12 @@ const AboutUsDialog: React.FC<AboutUsDialogProps> = ({ isOpen, onClose }) => {
             </li>
           </ul>
 
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6 text-justify">
             At Research for Nepal, our greatest asset is knowledge—driven by the
             people who create, refine, and apply it. Our team consists of:
           </p>
 
-          <ul className="space-y-4 text-gray-600 list-decimal pl-6 mb-8">
+          <ul className="space-y-4 text-gray-600 list-decimal pl-6 mb-8 text-justify">
             <li>
               Dedicated researchers and technologists committed to advancing
               Nepal's research landscape.
@@ -94,7 +94,7 @@ const AboutUsDialog: React.FC<AboutUsDialogProps> = ({ isOpen, onClose }) => {
             </li>
           </ul>
 
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6 text-justify">
             Through interdisciplinary research, policy advocacy, and
             capacity-building programs, RfN aims to bridge the gap between
             academic research and real-world application, ensuring that
@@ -104,7 +104,7 @@ const AboutUsDialog: React.FC<AboutUsDialogProps> = ({ isOpen, onClose }) => {
             development.
           </p>
 
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 text-justify">
             We invite researchers, policymakers, students, and organizations to
             collaborate with us in shaping a stronger, more resilient, and
             prosperous Nepal.
